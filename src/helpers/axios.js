@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-let BASE_URL = "https://sheethal-ecommerce-service.onrender.com";
+let BASE_URL = "https://sheethal-ecommerce-services.onrender.com";
 
 const axios = Axios.create({
   baseURL: BASE_URL,
@@ -15,7 +15,7 @@ axios.interceptors.response.use(response => {
   return response;
 }, error => {
   if (error.response.status === 401) {
-    console.log(401);
+    console.log('401 - Forbidden');
   }
   return Promise.reject(error)
 });
