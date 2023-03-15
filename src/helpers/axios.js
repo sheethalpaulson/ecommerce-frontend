@@ -7,7 +7,8 @@ const axios = Axios.create({
   responseType: 'json',
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  withCredentials: true
 });
 
 axios.interceptors.response.use(response => {
