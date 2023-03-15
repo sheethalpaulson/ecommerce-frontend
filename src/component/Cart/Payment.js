@@ -103,7 +103,7 @@ const Payment = ({ history }) => {
       }
     } catch (error) {
       payBtn.current.disabled = false;
-      alert.error(error.response.data.message);
+      alert.error(error.response?.data?.message);
     }
   };
 
