@@ -57,14 +57,14 @@ const ProductList = ({ history }) => {
     {
       field: "name",
       headerName: "Name",
-      minWidth: 350,
+      minWidth: 250,
       flex: 1,
     },
     {
       field: "stock",
       headerName: "Stock",
       type: "number",
-      minWidth: 150,
+      minWidth: 100,
       flex: 0.3,
     },
 
@@ -72,7 +72,7 @@ const ProductList = ({ history }) => {
       field: "price",
       headerName: "Price",
       type: "number",
-      minWidth: 270,
+      minWidth: 100,
       flex: 0.5,
     },
 
@@ -80,21 +80,19 @@ const ProductList = ({ history }) => {
       field: "actions",
       flex: 0.3,
       headerName: "Actions",
-      minWidth: 150,
+      minWidth: 100,
       type: "number",
       sortable: false,
       renderCell: (params) => {
         return (
           <Fragment>
             <Link to={`/admin/product/${params.getValue(params.id, "id")}`}>
+            <Button className="">
               <EditIcon />
+            </Button>
             </Link>
 
-            <Button
-              onClick={() =>
-                deleteProductHandler(params.getValue(params.id, "id"))
-              }
-            >
+            <Button onClick={() => deleteProductHandler(params.getValue(params.id, "id"))}>
               <DeleteIcon />
             </Button>
           </Fragment>
@@ -122,7 +120,7 @@ const ProductList = ({ history }) => {
       <div className="dashboard">
         <SideBar />
         <div className="productListContainer">
-          <h1 id="productListHeading">ALL PRODUCTS</h1>
+          <h3 id="productListHeading">ALL PRODUCTS</h3>
 
           <DataGrid
             rows={rows}

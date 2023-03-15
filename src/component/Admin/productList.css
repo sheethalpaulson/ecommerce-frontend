@@ -9,7 +9,7 @@
 }
 
 #productListHeading {
-  font: 400 2rem "Roboto";
+  font: 400 24px "Roboto";
   padding: 0.5vmax;
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.637);
@@ -33,6 +33,12 @@
 .productListTable button {
   color: rgba(0, 0, 0, 0.527);
   transition: all 0.5s;
+}
+
+.productListTable .MuiButton-root,
+.productListTable .MuiButton-label {
+  padding: 5px;
+  width: 30px !important;
 }
 
 .productListTable a:hover {

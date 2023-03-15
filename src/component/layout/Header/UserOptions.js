@@ -32,7 +32,12 @@ const UserOptions = ({ user }) => {
       name: `Cart(${cartItems.length})`,
       func: cart,
     },
-    { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
+    { 
+      icon: (
+        <ExitToAppIcon 
+          style={{ color: "black"}}
+        />
+      ), name: "Logout", func: logoutUser },
   ];
 
   if (user.role === "admin") {
