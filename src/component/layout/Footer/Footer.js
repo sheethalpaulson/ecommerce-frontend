@@ -1,6 +1,4 @@
 import React from "react";
-import playStore from "../../../images/playstore.png";
-import appStore from "../../../images/Appstore.png";
 import "./Footer.css";
 
 const Footer = () => {
@@ -10,7 +8,7 @@ const Footer = () => {
 
       <div className="midFooter">
         <h3>ECOMMERCE.</h3>
-        <p>Copyrights 2021 &copy; Sheethal</p>
+        <p>Copyrights 2023 &copy; Sheethal</p>
       </div>
 
       <div className="rightFooter"></div>
