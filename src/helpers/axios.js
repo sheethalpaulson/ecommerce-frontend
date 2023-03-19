@@ -15,9 +15,7 @@ const axios = Axios.create({
 axios.interceptors.response.use(response => {
   return response;
 }, error => {
-  if (error.response?.status === 401) {
-    console.log('401 - Forbidden');
-  }
+  if (error.response?.status === 401) {}
   return Promise.reject(error)
 });
 
