@@ -63,6 +63,7 @@ const UserOptions = ({ user }) => {
   }
   function logoutUser() {
     dispatch(logout());
+    localStorage.removeItem('token');
     alert.success("Logout Successfully");
   }
 
