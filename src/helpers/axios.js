@@ -12,6 +12,15 @@ const axios = Axios.create({
   withCredentials: true,
 });
 
+axios.interceptors.request.use((request) => {
+    const token = localStorage.getItem('token') ?? null;
+    if ( token ) {
+      request.headers.Authorization = `Bearer ${token}`;
+    }
+     
+    return request;
+});
+
 axios.interceptors.response.use(response => {
   return response;
 }, error => {
