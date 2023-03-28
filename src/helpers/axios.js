@@ -1,12 +1,13 @@
 import Axios from 'axios';
 
 let BASE_URL = "https://sheethal-ecommerce-services.onrender.com";
-// BASE_URL = "http://localhost:4000";
+BASE_URL = "http://localhost:4000";
 
 const axios = Axios.create({
   baseURL: BASE_URL,
   responseType: 'json',
   headers: {
+    'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json'
   },
   withCredentials: true,
