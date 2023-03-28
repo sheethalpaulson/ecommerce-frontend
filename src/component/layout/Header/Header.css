@@ -9,3 +9,7 @@
   height: 56px;
   border-radius: 50%;
 }
+
+img.logoReactNavbar {
+  width: 20vmax !important;
+}

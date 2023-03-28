@@ -14,6 +14,8 @@ const ProductCard = ({ product }) => {
       <p>{product.name}</p>
       <div>
         <Rating {...options} />{" "}
+      </div>
+      <div>
         <span className="productCardSpan">
           {" "}
           ({product.numOfReviews} Reviews)
