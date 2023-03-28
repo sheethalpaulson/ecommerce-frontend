@@ -12,7 +12,7 @@ const About = () => {
             <Typography><h3>Sheethal Paul</h3></Typography>
             <br/>
             <span>
-              This is a sample ecommerce wesbite.
+              Sheethal's Cart
             </span>
           </div>
         </div>
