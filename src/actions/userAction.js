@@ -68,6 +68,8 @@ export const register = (userData) => async (dispatch) => {
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     const { data } = await axios.post(`/api/v1/register`, userData, config);
+    
+    localStorage.setItem('token', data.token);
 
     dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });
   } catch (error) {
@@ -95,7 +97,7 @@ export const loadUser = () => async (dispatch) => {
 export const logout = () => async (dispatch) => {
   try {
     await axios.get(`/api/v1/logout`);
-
+    localStorage.removeItem('token');
     dispatch({ type: LOGOUT_SUCCESS });
   } catch (error) {
     dispatch({ type: LOGOUT_FAIL, payload: error.response?.data?.message });
