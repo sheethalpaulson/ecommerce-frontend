@@ -67,6 +67,10 @@ function App() {
     getStripeApiKey();
   }, []);
 
+  if ( isAuthenticated && !stripeApiKey) {
+    getStripeApiKey();
+  }
+
   window.addEventListener("contextmenu", (e) => e.preventDefault());
 
   return (
