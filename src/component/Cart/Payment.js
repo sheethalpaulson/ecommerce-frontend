@@ -19,6 +19,8 @@ import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { createOrder, clearErrors } from "../../actions/orderAction";
 
+import { removeItemsFromCart } from "../../actions/cartAction";
+
 const Payment = ({ history }) => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
 
@@ -44,6 +46,13 @@ const Payment = ({ history }) => {
     shippingPrice: orderInfo.shippingCharges,
     totalPrice: orderInfo.totalPrice,
   };
+
+  const clearCart = () => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    cartItems.forEach(item => {
+      dispatch(removeItemsFromCart(item.product));
+    })
+  }
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -93,7 +102,7 @@ const Payment = ({ history }) => {
             id: result.paymentIntent.id,
             status: result.paymentIntent.status,
           };
-
+          clearCart();
           dispatch(createOrder(order));
 
           history.push("/success");
